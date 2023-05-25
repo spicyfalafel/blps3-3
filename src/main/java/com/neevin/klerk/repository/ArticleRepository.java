@@ -19,11 +19,11 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
 //    );
 
 
-//    @Query(value = "select * from articles where article_status = 'NEED_REVIEW' limit :limit offset :offset", nativeQuery = true)
-//    List<Article> allArticlesToReview(
-//            @Param("limit") Integer limit,
-//            @Param("offset") Integer offset
-//    );
+    @Query(value = "select * from articles where article_status = 'NEED_REVIEW' limit :limit offset :offset", nativeQuery = true)
+    List<Article> allArticlesToReview(
+            @Param("limit") Integer limit,
+            @Param("offset") Integer offset
+    );
 //
 //    Optional<Article> getArticleByIdAndArticleStatus(@Param("id") Integer id, @Param("article_status") ArticleStatus articleStatus);
 //
